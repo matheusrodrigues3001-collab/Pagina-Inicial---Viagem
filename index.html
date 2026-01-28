@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Planejamento da Viagem</title>
+<title>Meu Planejador de Viagens</title>
 
 <style>
 * { box-sizing: border-box; }
@@ -14,69 +14,53 @@ body {
     background: linear-gradient(180deg,#dbeafe,#bfdbfe,#e0f2fe);
     display: flex;
     justify-content: center;
-    padding: 25px;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .container {
     backdrop-filter: blur(14px);
     background: rgba(255,255,255,0.75);
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     border-radius: 22px;
-    padding: 22px;
+    padding: 28px;
     box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    text-align: center;
 }
 
 h1 {
-    text-align: center;
     color: #1e3a8a;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-.etapa {
-    background: white;
-    border: 1px solid #dbeafe;
-    border-radius: 16px;
-    padding: 14px;
-    margin: 10px 0;
-    cursor: pointer;
-    transition: 0.3s;
+p {
+    color: #334155;
     font-size: 14px;
-    font-weight: bold;
-}
-
-.etapa:hover {
-    transform: scale(1.03);
-}
-
-.concluida {
-    background: #16a34a;
-    color: white;
-    border-color: #22c55e;
-    text-decoration: line-through;
-}
-
-.seta {
-    text-align: center;
-    font-size: 18px;
-    opacity: 0.6;
+    margin-bottom: 25px;
 }
 
 button {
     width: 100%;
-    padding: 10px;
-    margin-top: 15px;
+    padding: 14px;
     border: none;
-    border-radius: 12px;
+    border-radius: 14px;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+    background: #3b82f6;
+    color: white;
+    transition: 0.3s;
 }
 
-.primary { background: #3b82f6; color: white; }
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(59,130,246,0.4);
+}
 
 .credito {
-    text-align: center;
-    margin-top: 18px;
+    margin-top: 25px;
     font-size: 12px;
     color: #475569;
     opacity: 0.8;
@@ -85,53 +69,20 @@ button {
 </head>
 
 <body>
+
 <div class="container">
+    <h1>✈️ Planejador de Viagens</h1>
+    <p>Organize seus passeios, controle seus gastos e planeje tudo de forma simples.</p>
 
-<h1>🗺️ Mapeamento do Passeio</h1>
+    <button onclick="entrar()">❄️ Acessar Viagem para Gramado</button>
 
-<div class="etapa" onclick="toggleEtapa(this,0)">📍 Planejar passeio</div>
-<div class="seta">⬇️</div>
-
-<div class="etapa" onclick="toggleEtapa(this,1)">🎟️ Comprar ingresso</div>
-<div class="seta">⬇️</div>
-
-<div class="etapa" onclick="toggleEtapa(this,2)">📅 Conferir horário</div>
-<div class="seta">⬇️</div>
-
-<div class="etapa" onclick="toggleEtapa(this,3)">🚗 Ir ao local</div>
-<div class="seta">⬇️</div>
-
-<div class="etapa" onclick="toggleEtapa(this,4)">🎡 Realizar passeio</div>
-<div class="seta">⬇️</div>
-
-<div class="etapa" onclick="toggleEtapa(this,5)">💰 Registrar gasto</div>
-
-<button class="primary" onclick="irParaGastos()">Abrir Viagem para Gramado</button>
-
-<div class="credito">Planejamento de viagem • Matheus Damica ✨</div>
-
+    <div class="credito">Criado por <strong>Matheus Damica</strong></div>
 </div>
 
 <script>
-let progresso = JSON.parse(localStorage.getItem("progressoPasseio")) || [];
-
-function toggleEtapa(el, index){
-    el.classList.toggle("concluida");
-    progresso[index] = el.classList.contains("concluida");
-    localStorage.setItem("progressoPasseio", JSON.stringify(progresso));
+function entrar(){
+    window.location.href = "https://matheusrodrigues3001-collab.github.io/Site-de-Viagem/";
 }
-
-function carregarProgresso(){
-    document.querySelectorAll(".etapa").forEach((etapa,i)=>{
-        if(progresso[i]) etapa.classList.add("concluida");
-    });
-}
-
-function irParaGastos(){
-    window.location.href = "viagem.html"; // sua página dos gastos
-}
-
-carregarProgresso();
 </script>
 
 </body>
