@@ -49,14 +49,23 @@ button {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+    margin-top: 12px;
+    transition: 0.3s;
+}
+
+.gramado {
     background: #3b82f6;
     color: white;
-    transition: 0.3s;
+}
+
+.roteiro {
+    background: #16a34a;
+    color: white;
 }
 
 button:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(59,130,246,0.4);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 .credito {
@@ -72,16 +81,21 @@ button:hover {
 
 <div class="container">
     <h1>✈️ Planejador de Viagens</h1>
-    <p>Organize seus passeios, controle seus gastos e planeje tudo de forma simples.</p>
+    <p>Organize seus passeios, controle seus gastos e acompanhe seu roteiro.</p>
 
-    <button onclick="entrar()">❄️ Controle de Gastos</button>
+    <button class="gramado" onclick="abrirGramado()">❄️ Controle da Viagem</button>
+    <button class="roteiro" onclick="abrirRoteiro()">🗺️ Ver Roteiro dos Locais</button>
 
     <div class="credito">Criado por <strong>Matheus Damica</strong></div>
 </div>
 
 <script>
-function entrar(){
+function abrirGramado(){
     window.location.href = "https://matheusrodrigues3001-collab.github.io/Site-de-Viagem/";
+}
+
+function abrirRoteiro(){
+    window.location.href = "https://matheusrodrigues3001-collab.github.io/Roteiro-de-viagem/index.html";
 }
 </script>
 
