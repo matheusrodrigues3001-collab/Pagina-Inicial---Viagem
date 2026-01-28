@@ -63,6 +63,11 @@ button {
     color: white;
 }
 
+.checklist {
+    background: #f59e0b;
+    color: white;
+}
+
 button:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
@@ -85,6 +90,7 @@ button:hover {
 
     <button class="gramado" onclick="abrirGramado()">❄️ Controle da Viagem</button>
     <button class="roteiro" onclick="abrirRoteiro()">🗺️ Ver Roteiro dos Locais</button>
+    <button class="checklist" onclick="abrirChecklist()">✅ Checklist da Viagem</button>
 
     <div class="credito">Criado por <strong>Matheus Damica</strong></div>
 </div>
@@ -96,6 +102,10 @@ function abrirGramado(){
 
 function abrirRoteiro(){
     window.location.href = "https://matheusrodrigues3001-collab.github.io/Roteiro-de-viagem/index.html";
+}
+
+function abrirChecklist(){
+    window.location.href = "https://matheusrodrigues3001-collab.github.io/Checklist-Viagem/";
 }
 </script>
 
