@@ -1,1 +1,8 @@
-
+{
+  "name": "Planejador de Viagens",
+  "short_name": "Minha Viagem",
+  "start_url": "/Pagina-Inicial---Viagem/",
+  "display": "standalone",
+  "background_color": "#dbeafe",
+  "theme_color": "#3b82f6"
+}
