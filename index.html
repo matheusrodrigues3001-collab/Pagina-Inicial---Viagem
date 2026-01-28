@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Meu Planejador de Viagens</title>
 
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#3b82f6">
+
 <style>
 * { box-sizing: border-box; }
 
@@ -53,20 +57,9 @@ button {
     transition: 0.3s;
 }
 
-.gramado {
-    background: #3b82f6;
-    color: white;
-}
-
-.roteiro {
-    background: #16a34a;
-    color: white;
-}
-
-.checklist {
-    background: #f59e0b;
-    color: white;
-}
+.gramado { background: #3b82f6; color: white; }
+.roteiro { background: #16a34a; color: white; }
+.checklist { background: #f59e0b; color: white; }
 
 button:hover {
     transform: scale(1.05);
@@ -107,7 +100,13 @@ function abrirRoteiro(){
 function abrirChecklist(){
     window.location.href = "https://matheusrodrigues3001-collab.github.io/Checklist-Viagem/";
 }
+
+/* REGISTRO DO SERVICE WORKER */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
 </script>
 
 </body>
 </html>
+
